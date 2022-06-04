@@ -8,5 +8,6 @@ const MemberSchema = new Schema(
         type : String,
     },
 );
+
 const Member = mongoose.model("Member", MemberSchema);
 module.exports = { Member };

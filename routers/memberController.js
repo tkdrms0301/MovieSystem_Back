@@ -8,4 +8,14 @@ router.post("/member", async(req, res) => {
     return res.send({ member });
 });
 
+router.get("/memberGet", async(req, res) => {
+    try{
+        const members = await Member.find({});
+        res.send(members);
+    }catch(err){
+        console.log(err);
+        res.status(500).send({ err : err.message });
+    }
+});
+
 module.exports = router;
