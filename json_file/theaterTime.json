@@ -1,0 +1,42 @@
+[
+    {
+        "time": "10:20",
+        "theater": "62a040299edd5ce15c996d2b",
+        "movie": "62a03c139edd5ce15c996d21"
+    },
+    {
+        "time": "13:40",
+        "theater": "62a040299edd5ce15c996d2a",
+        "movie": "62a03c139edd5ce15c996d21"
+    },
+    {
+        "time": "16:30",
+        "theater": "62a040299edd5ce15c996d2b",
+        "movie": "62a03c139edd5ce15c996d21"
+    },
+    {
+        "time": "20:20",
+        "theater": "62a040299edd5ce15c996d2a",
+        "movie": "62a03c139edd5ce15c996d21"
+    },
+    {
+        "time": "11:20",
+        "theater": "62a040299edd5ce15c996d2b",
+        "movie": "62a03c139edd5ce15c996d22"
+    },
+    {
+        "time": "14:40",
+        "theater": "62a040299edd5ce15c996d2a",
+        "movie": "62a03c139edd5ce15c996d22"
+    },
+    {
+        "time": "17:30",
+        "theater": "62a040299edd5ce15c996d2b",
+        "movie": "62a03c139edd5ce15c996d22"
+    },
+    {
+        "time": "21:20",
+        "theater": "62a040299edd5ce15c996d2a",
+        "movie": "62a03c139edd5ce15c996d22"
+    }
+]

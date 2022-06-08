@@ -1,0 +1,10 @@
+[
+    {
+        "theaterName": "1관",
+        "totalSeat": 100
+    },
+    {
+        "theaterName": "2관",
+        "totalSeat": 100
+    }
+]

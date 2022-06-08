@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
 const memberController = require('./routers/memberController');
@@ -11,12 +12,13 @@ const ticketingController = require('./routers/ticketingController');
 const ticketingSeatController = require('./routers/ticketingSeatController');
 
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = 8080;
 const DB_URI = 'mongodb://127.0.0.1:27017/movie';
 
 const server = async () => {
     try {
         await mongoose.connect(DB_URI);
+        app.use(cors({ origin: 'http://localhost:3000' }));
         app.use(express.json());
         app.use(memberController);
         app.use(movieController);
