@@ -5,7 +5,9 @@
         "screenGrade": "12세",
         "genre": "액션",
         "runtime": "147분",
-        "openingDate": "2022-06-01"
+        "openingDate": "2022-06-01",
+        "averageGrade": 4.4,
+        "ticketingRate": 90
     },
     {
         "title": "범죄도시 2",
@@ -13,7 +15,9 @@
         "screenGrade": "15세",
         "genre": "액션",
         "runtime": "106분",
-        "openingDate": "2022-05-18"
+        "openingDate": "2022-05-18",
+        "averageGrade": 3.5,
+        "ticketingRate": 85
     },
     {
         "title": "브로커",
@@ -21,7 +25,9 @@
         "screenGrade": "12세",
         "genre": "드라마",
         "runtime": "129분",
-        "openingDate": "2022-06-08"
+        "openingDate": "2022-06-08",
+        "averageGrade": 4.7,
+        "ticketingRate": 95
     },
     {
         "title": "극장판 포켓몬스터DP-기라티나와 하늘의 꽃다발 쉐이미",
@@ -29,7 +35,9 @@
         "screenGrade": "전체",
         "genre": "애니메이션",
         "runtime": "96분",
-        "openingDate": "2022-06-01"
+        "openingDate": "2022-06-01",
+        "averageGrade": 4.9,
+        "ticketingRate": 70
     },
     {
         "title": "(라이브뷰잉)Ensemble Stars!! DREAM LIVE -6th Tour",
@@ -37,7 +45,9 @@
         "screenGrade": "15세",
         "genre": "애니메이션",
         "runtime": "150분",
-        "openingDate": "2022-06-24"
+        "openingDate": "2022-06-24",
+        "averageGrade": 4.0,
+        "ticketingRate": 75
     },
     {
         "title": "애프터 양",
@@ -45,7 +55,9 @@
         "screenGrade": "전체",
         "genre": "드라마",
         "runtime": "96분",
-        "openingDate": "2022-06-01"
+        "openingDate": "2022-06-01",
+        "averageGrade": 4.3,
+        "ticketingRate": 80
     },
     {
         "title": "닥터 스트레인지-대혼돈의 멀티버스",
@@ -53,7 +65,9 @@
         "screenGrade": "12세",
         "genre": "액션",
         "runtime": "126분",
-        "openingDate": "2022-05-04"
+        "openingDate": "2022-05-04",
+        "averageGrade": 4.2,
+        "ticketingRate": 86
     },
     {
         "title": "마녀(魔女) Part2. The Other One",
@@ -61,6 +75,8 @@
         "screenGrade": "15세",
         "genre": "액션",
         "runtime": "137분",
-        "openingDate": "2022-06-15"
+        "openingDate": "2022-06-15",
+        "averageGrade": 4.1,
+        "ticketingRate": 60
     }
 ]
