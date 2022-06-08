@@ -4,6 +4,11 @@ const mongoose = require('mongoose');
 const memberController = require('./routers/memberController');
 const movieController = require('./routers/movieController');
 const eventController = require('./routers/eventController');
+const commentController = require('./routers/commentController');
+const theaterController = require('./routers/theaterController');
+const theaterTimeController = require('./routers/theaterTimeController');
+const ticketingController = require('./routers/ticketingController');
+const ticketingSeatController = require('./routers/ticketingSeatController');
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -16,6 +21,12 @@ const server = async () => {
         app.use(memberController);
         app.use(movieController);
         app.use(eventController);
+        app.use(commentController);
+        app.use(theaterController);
+        app.use(theaterTimeController);
+        app.use(ticketingController);
+        app.use(ticketingSeatController);
+
         app.listen(port, hostname, function () {
             console.log('server is running');
         });
