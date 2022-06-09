@@ -5,7 +5,7 @@
         "screenGrade": "12",
         "genre": "액션",
         "runtime": "147분",
-        "openingDate": "2022-06-01",
+        "openingDate": "2022.06.01",
         "averageGrade": 4.4,
         "ticketingRate": 90
     },
@@ -15,7 +15,7 @@
         "screenGrade": "15",
         "genre": "액션",
         "runtime": "106분",
-        "openingDate": "2022-05-18",
+        "openingDate": "2022.05.18",
         "averageGrade": 3.5,
         "ticketingRate": 85
     },
@@ -25,7 +25,7 @@
         "screenGrade": "12",
         "genre": "드라마",
         "runtime": "129분",
-        "openingDate": "2022-06-08",
+        "openingDate": "2022.06.08",
         "averageGrade": 4.7,
         "ticketingRate": 95
     },
@@ -35,7 +35,7 @@
         "screenGrade": "all",
         "genre": "애니메이션",
         "runtime": "96분",
-        "openingDate": "2022-06-01",
+        "openingDate": "2022.06.01",
         "averageGrade": 4.9,
         "ticketingRate": 70
     },
@@ -45,7 +45,7 @@
         "screenGrade": "15",
         "genre": "애니메이션",
         "runtime": "150분",
-        "openingDate": "2022-06-24",
+        "openingDate": "2022.06.24",
         "averageGrade": 4.0,
         "ticketingRate": 75
     },
@@ -55,7 +55,7 @@
         "screenGrade": "all",
         "genre": "드라마",
         "runtime": "96분",
-        "openingDate": "2022-06-01",
+        "openingDate": "2022.06.01",
         "averageGrade": 4.3,
         "ticketingRate": 80
     },
@@ -65,7 +65,7 @@
         "screenGrade": "12",
         "genre": "액션",
         "runtime": "126분",
-        "openingDate": "2022-05-04",
+        "openingDate": "2022.05.04",
         "averageGrade": 4.2,
         "ticketingRate": 86
     },
@@ -75,7 +75,7 @@
         "screenGrade": "15",
         "genre": "액션",
         "runtime": "137분",
-        "openingDate": "2022-06-15",
+        "openingDate": "2022.06.15",
         "averageGrade": 4.1,
         "ticketingRate": 60
     }

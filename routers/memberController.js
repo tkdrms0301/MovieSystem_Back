@@ -1,22 +1,29 @@
 const express = require('express');
 const router = express.Router();
+const cookieParser = require('cookie-parser');
 const { Member } = require('../models/member');
+
+router.use(cookieParser());
 
 // login
 router.post('/login/member', async (req, res) => {
     try {
         const { id, password } = req.body;
         const members = await Member.findOne({ id: id, password: password }).exec();
-        if (!members) {
+        if (members === null) {
             console.log('kkkk');
             console.log(req.body);
-            return res.status(401).send();
+            return res.status(401).send(members);
         }
         //redirect 추가
         else {
             console.log('aaaaa');
-            console.log(req.body);
-            return res.status(200).send(members);
+            /* console.log(req.body); */
+            res.cookie('id', id);
+
+            console.log(req.cookies);
+
+            return res.status(200).send(members, req.cookies);
         }
     } catch (err) {
         console.log(err);
