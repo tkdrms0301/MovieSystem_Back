@@ -3,6 +3,7 @@ const router = express.Router();
 const commentRouter = require('./commentController');
 const { isValidObjectId } = require('mongoose');
 const { Movie } = require('../models/movie');
+const { isValidObjectId } = require('mongoose');
 
 router.use('/:movieId/comment', commentRouter);
 
@@ -64,6 +65,24 @@ router.get('/movieTicketingRateGet', async (req, res) => {
 });
 //상세
 router.get('/:movieId', async (req, res) => {
+    try {
+        const { movieId } = req.params;
+
+        if (!isValidObjectId(movieId)) {
+            return res.status(400).send({ error: 'movieId is invalid' });
+        }
+
+        const movies = await Movie.findById(movieId);
+        if (!movies) return res.status(400).send({ error: 'movie does not exist' });
+        return res.send({ movies });
+    } catch (err) {
+        console.log(err);
+        res.status(500).send({ err: err.message });
+    }
+});
+
+//상세페이지 이동
+router.get('/movieDetail/:movieId', async (req, res) => {
     try {
         const { movieId } = req.params;
 
