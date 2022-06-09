@@ -7,10 +7,10 @@ router.post('/login/member', async (req, res) => {
     try {
         const { id, password } = req.body;
         const members = await Member.findOne({ id: id, password: password }).exec();
-        if (!members) {
+        if (members === null) {
             console.log('kkkk');
             console.log(req.body);
-            return res.status(401).send();
+            return res.status(401).send(members);
         }
         //redirect 추가
         else {

@@ -7,7 +7,7 @@ const MovieSchema = new Schema({
     screenGrade: { type: String, required: true },
     genre: { type: String, required: true, default: '액션' },
     runtime: { type: String, require: true },
-    openingDate: { type: Date, require: true },
+    openingDate: { type: String, require: true },
     isOpen: { type: Boolean, default: false },
     averageGrade: { type: Number, default: 0 },
     ticketingRate: { type: Number, default: 0 },
