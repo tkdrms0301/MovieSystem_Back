@@ -14,4 +14,12 @@ router.get('/comment', async (req, res) => {
     }
 });
 
+router.post('/commentPost', async (req, res) => {
+    try {
+    } catch (err) {
+        console.log(err);
+        res.status(500).send({ err: err.message });
+    }
+});
+
 module.exports = router;
