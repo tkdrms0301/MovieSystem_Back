@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema, Types } = mongoose;
 const CommentSchema = new Schema({
-    cotents: { type: String },
+    contents: { type: String },
     recommand: { type: Number },
     grade: { type: Number },
     // 영화 id
