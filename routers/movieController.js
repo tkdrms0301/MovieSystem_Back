@@ -19,6 +19,25 @@ router.get('/movieGet', async (req, res) => {
     }
 });
 
+router.get('/movieSortGet', async (req, res) => {
+    try {
+        sort = req.query.sort;
+        if (sort === 'reservationRate') {
+            const movies = await Movie.find({}).sort({ averageGrade: -1 });
+            res.send(movies);
+        } else if (sort === 'orderRate') {
+            const movies = await Movie.find({}).sort({ ticketingRate: -1 });
+            res.send(movies);
+        } else {
+            const movies = Movie;
+            res.send(movies);
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).send({ err: err.message });
+    }
+});
+
 //평균평점순
 router.get('/movieAverageGradeGet', async (req, res) => {
     try {
