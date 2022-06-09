@@ -7,9 +7,17 @@ router.post('/login/member', async (req, res) => {
     try {
         const { id, password } = req.body;
         const members = await Member.findOne({ id: id, password: password }).exec();
-        if (!members) return res.status(401).send();
+        if (!members) {
+            console.log('kkkk');
+            console.log(req.body);
+            return res.status(401).send();
+        }
         //redirect 추가
-        else return res.status(302).send(members);
+        else {
+            console.log('aaaaa');
+            console.log(req.body);
+            return res.status(200).send(members);
+        }
     } catch (err) {
         console.log(err);
         res.status(500).send({ err: err.message });
@@ -23,7 +31,7 @@ router.post('/sign/member', async (req, res) => {
         if (await Member.findOne({ id: members.id })) return res.status(400).send();
 
         await members.save();
-        return res.send({ members });
+        return res.status(200).send({ members });
     } catch (err) {
         console.log(err);
         res.status(500).send({ err: err.message });
