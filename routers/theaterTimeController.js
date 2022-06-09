@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const { Types } = mongoose;
 const { TheaterTime } = require('../models/theaterTime');
 
 router.get('/theaterTime', async (req, res) => {
