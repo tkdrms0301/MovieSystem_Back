@@ -12,7 +12,6 @@ router.get('/', async (req, res) => {
         const comment = await Comment.find(movie)
             .populate({ path: 'member' })
             .populate({ path: 'movie' });
-        console.log(comment);
 
         res.send(comment);
     } catch (err) {
@@ -23,13 +22,12 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const { movieId } = req.params;
+        var { movie } = req.params;
         const { contents, memberId, grade } = req.body;
-        console.log(memberId);
-        if (!isValidObjectId(movieId)) return res.status(400).send({ error: 'movieId is invalid' });
+        if (!isValidObjectId(movie)) return res.status(400).send({ error: 'movieId is invalid' });
         if (!isValidObjectId(memberId))
             return res.status(400).send({ error: 'memberId is invalid' });
-        const movie = await Movie.findById(movieId);
+        var movie = await Movie.findById(movie);
         const member = await Member.findById(memberId);
         const recommand = 0;
 
@@ -46,6 +44,7 @@ router.post('/', async (req, res) => {
 router.put('/:commentId', async (req, res) => {
     try {
         const { commentId } = req.params;
+        console.log(commentId);
         const { content, grade } = req.body;
         if (!isValidObjectId(commentId))
             return res.status(400).send({ error: 'commentId is invalid' });
