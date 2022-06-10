@@ -8,7 +8,7 @@ const RcommandSchema = new Schema({
     // 회원 id
     member: { type: Types.ObjectId, required: true, ref: 'Member' },
 
-    done: { type: Boolean, default: false },
+    recommandMember: { type: Types.ObjectId, required: true, ref: 'Member', default: null },
 });
 
 const Recommand = mongoose.model('Recommand', RcommandSchema);

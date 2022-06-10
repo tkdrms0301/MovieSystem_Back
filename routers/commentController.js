@@ -10,18 +10,31 @@ const { isValidObjectId } = require('mongoose');
 router.put('/:comment/:member', async (req, res) => {
     try {
         const isRecommand = req.params;
-        console.log(isRecommand);
-        const { comment } = req.params;
-        const { recommandNum } = req.body;
-        const recommand = await Recommand.find(isRecommand);
-        const isdone = await Recommand.find(isRecommand, { done: 1 });
+        const { recommandMember, recommandNum } = req.body;
+        const { movie, comment, member } = req.params;
+        const allRecommand = await Recommand.find(isRecommand);
+        const recommand = await Recommand.find({ recommandMember: recommandMember });
+        let i;
+        let j;
 
-        if (!isdone[0].done) {
-            await Recommand.updateOne(recommand, { done: true });
-            console.log('수정됨?');
+        let overlap = false;
+        for (i = 0; i < recommand.length; i++) {
+            for (j = 0; j < allRecommand.length; j++) {
+                if (
+                    String(recommand[i].recommandMember) == String(allRecommand[j].recommandMember)
+                ) {
+                    overlap = true;
+                }
+            }
+        }
+
+        if (!overlap) {
+            const newRecommand = new Recommand({ movie, comment, member, recommandMember });
+            await newRecommand.save();
             const updateComment = await Comment.findByIdAndUpdate(comment, {
                 recommandNum: recommandNum,
             });
+            overlap = false;
             return res.send(updateComment);
         } else {
             const originComment = await Comment.findById(comment);
@@ -62,10 +75,9 @@ router.post('/', async (req, res) => {
         if (!movie || !member)
             return res.status(400).send({ error: 'movie or member does not exist' });
         const comment = new Comment({ contents, recommandNum, grade, movie, member });
-        const recommand = new Recommand({ movie, comment, member });
+
         console.log(comment._id);
         await comment.save();
-        await recommand.save();
 
         return res.send({ comment });
     } catch (error) {
@@ -83,21 +95,6 @@ router.put('/:commentId', async (req, res) => {
         const comment = await Comment.findByIdAndUpdate(commentId, {
             contents: content,
             grade: grade,
-        });
-        return res.send(comment);
-    } catch (err) {
-        console.log(err);
-        res.status(500).send({ err: err.message });
-    }
-});
-router.put('/:commentId/recommand', async (req, res) => {
-    try {
-        const { commentId } = req.params;
-        const { recommand } = req.body;
-        if (!isValidObjectId(commentId))
-            return res.status(400).send({ error: 'commentId is invalid' });
-        const comment = await Comment.findByIdAndUpdate(commentId, {
-            recommand: recommand,
         });
         return res.send(comment);
     } catch (err) {
