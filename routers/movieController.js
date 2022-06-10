@@ -4,7 +4,7 @@ const commentRouter = require('./commentController');
 const { isValidObjectId } = require('mongoose');
 const { Movie } = require('../models/movie');
 
-router.use('/:movieId/comment', commentRouter);
+router.use('/:movie/comment', commentRouter);
 
 router.post('/movie', async (req, res) => {
     const movie = new Movie(req.body);
