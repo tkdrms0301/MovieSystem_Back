@@ -7,9 +7,13 @@ const { isValidObjectId } = require('mongoose');
 
 router.get('/', async (req, res) => {
     try {
-        const comment = await Comment.find({})
+        const movie = req.params;
+
+        const comment = await Comment.find(movie)
             .populate({ path: 'member' })
             .populate({ path: 'movie' });
+        console.log(comment);
+
         res.send(comment);
     } catch (err) {
         console.log(err);
@@ -19,7 +23,6 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        console.log('commentRouter');
         const { movieId } = req.params;
         const { contents, memberId, grade } = req.body;
         console.log(memberId);
