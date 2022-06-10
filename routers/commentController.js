@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
     try {
         console.log('commentRouter');
         const { movieId } = req.params;
-        const { content, memberId, grade } = req.body;
+        const { contents, memberId, grade } = req.body;
         console.log(memberId);
         if (!isValidObjectId(movieId)) return res.status(400).send({ error: 'movieId is invalid' });
         if (!isValidObjectId(memberId))
@@ -32,13 +32,12 @@ router.post('/', async (req, res) => {
 
         if (!movie || !member)
             return res.status(400).send({ error: 'movie or member does not exist' });
-        const comment = new Comment({ content, recommand, grade, movie, member });
+        const comment = new Comment({ contents, recommand, grade, movie, member });
         await comment.save();
         return res.send({ comment });
     } catch (error) {
         return res.status(400).send({ error: error.message });
     }
-    return res.send(req.params);
 });
 
 router.put('/:commentId', async (req, res) => {
