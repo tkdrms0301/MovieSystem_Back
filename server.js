@@ -18,7 +18,7 @@ const DB_URI = 'mongodb://127.0.0.1:27017/movie';
 const server = async () => {
     try {
         await mongoose.connect(DB_URI);
-        app.use(cors({ origin: 'http://localhost:3000' }));
+        app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
         app.use(express.json());
         app.use(memberController);
         app.use(movieController);
