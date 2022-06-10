@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
+const ObjectId = require('mongoose').Types.ObjectId;
 const commentRouter = require('./commentController');
 const { isValidObjectId } = require('mongoose');
 const { Movie } = require('../models/movie');
-
+const { Member } = require('../models/member');
 router.use('/:movie/comment', commentRouter);
 
 router.post('/movie', async (req, res) => {
