@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const cookieParser = require('cookie-parser');
 const { Member } = require('../models/member');
-
-router.use(cookieParser());
 
 // login
 router.post('/login/member', async (req, res) => {
@@ -19,9 +16,6 @@ router.post('/login/member', async (req, res) => {
         else {
             console.log('aaaaa');
             /* console.log(req.body); */
-            res.cookie('id', id);
-
-            console.log(req.cookies);
 
             return res.status(200).send(members, req.cookies);
         }
