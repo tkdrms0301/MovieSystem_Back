@@ -18,7 +18,7 @@ router.get('/theaterTime', async (req, res) => {
 router.get('/movie1', async (req, res) => {
     try {
         const theaterTime = await TheaterTime.find({})
-            .limit(4)
+            .limit(2)
             .populate({
                 path: 'movie',
             })
@@ -32,7 +32,7 @@ router.get('/movie1', async (req, res) => {
 router.get('/movie2', async (req, res) => {
     try {
         const theaterTime = await TheaterTime.find({})
-            .skip(4)
+            .skip(2)
             .populate({ path: 'theater' })
             .populate({
                 path: 'movie',
