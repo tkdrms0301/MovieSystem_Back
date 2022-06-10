@@ -4,6 +4,7 @@ const CommentSchema = new Schema({
     contents: { type: String },
     recommand: { type: Number },
     grade: { type: Number },
+    date: { type: Date, default: Date.now },
     // 영화 id
     movie: { type: Types.ObjectId, required: true, ref: 'Movie' },
     // 회원 id
