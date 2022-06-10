@@ -9,6 +9,8 @@ router.use(cookieParser());
 router.post('/login/member', async (req, res) => {
     try {
         const { id, password } = req.body;
+        console.log(id);
+        console.log(password);
         const members = await Member.findOne({ id: id, password: password }).exec();
         if (members === null) {
             console.log('kkkk');
@@ -19,11 +21,13 @@ router.post('/login/member', async (req, res) => {
         else {
             console.log('aaaaa');
             /* console.log(req.body); */
-            res.cookie('id', id);
+            res.cookie('jwt', 1, {
+                domain: '/',
+            });
 
-            console.log(req.cookies);
+            console.log(res.cookie);
 
-            return res.status(200).send(members, req.cookies);
+            return res.status(200).send(`Cookie 전송 : ${id}`);
         }
     } catch (err) {
         console.log(err);

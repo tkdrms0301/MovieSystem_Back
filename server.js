@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const app = express();
 const mongoose = require('mongoose');
 const memberController = require('./routers/memberController');
@@ -20,6 +21,7 @@ const server = async () => {
         await mongoose.connect(DB_URI);
         app.use(cors({ origin: 'http://localhost:3000' }));
         app.use(express.json());
+        app.use(cookieParser());
         app.use(memberController);
         app.use(movieController);
         app.use(eventController);
