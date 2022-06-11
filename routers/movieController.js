@@ -18,6 +18,10 @@ router.post('/movie', async (req, res) => {
 router.get('/movieGet', async (req, res) => {
     try {
         const movies = await Movie.find({});
+
+        const cookies = req.headers.cookies;
+        console.log('cookies : ' + cookies);
+
         res.send(movies);
     } catch (err) {
         console.log(err);
