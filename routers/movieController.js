@@ -20,6 +20,7 @@ router.get('/movieGet', async (req, res) => {
         const movies = await Movie.find({});
 
         const cookies = req.headers.cookies;
+        console.log(req.headers);
         console.log('cookies : ' + cookies);
 
         res.send(movies);

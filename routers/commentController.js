@@ -12,6 +12,9 @@ router.put('/:comment/:member', async (req, res) => {
         const isRecommand = req.params;
         const { recommandMember, recommandNum } = req.body;
         const { movie, comment, member } = req.params;
+
+        console.log('recommand: ' + recommandMember);
+
         const allRecommand = await Recommand.find(isRecommand);
         const recommand = await Recommand.find({ recommandMember: recommandMember });
         let i;

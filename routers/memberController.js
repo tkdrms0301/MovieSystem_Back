@@ -16,10 +16,7 @@ router.post('/login/member', async (req, res) => {
         else {
             console.log('aaaaa');
             /* console.log(req.body); */
-            const test = members._id;
-            res.cookie('jwt', members._id);
-
-            return res.status(200).send(`Cookie: ${id}`);
+            return res.status(200).send(members._id);
         }
     } catch (err) {
         console.log(err);
